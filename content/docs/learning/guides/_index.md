@@ -9,17 +9,17 @@ draft: false
 # More Resources
 
 ## Guides
-Deeper dives into hydra topics written by members of the hydra community. 
+Deeper dives into hydra topics written by members of the hydra community.
 
-* [Javascript for hydra users](guides/javascript.md) by geikha
-* [Generatively spawn patches](guides/automatic-patches.md) by geikha
-* [Precise control of frames and timing](guides/frames-and-timing.md) by geikha
-* [Hydra Book: Textures](guides/textures.md) by Naoto Hieda 
+* [Javascript for hydra users](javascript) by geikha
+* [Generatively spawn patches](automatic-patches) by geikha
+* [Precise control of frames and timing](frames-and-timing) by geikha
+* [Hydra Book: Textures](textures) by Naoto Hieda 
 
 ## How to
 * [Record hydra output](how-to/record-hydra-output)
 * [Use hydra without showing the code](how-to/use-hydra-without-showing-code)
-  
+
 ## Developing and Contributing
 * [overview](contributing)
 * [hydra-synth](contributing/synth)
@@ -30,8 +30,8 @@ Deeper dives into hydra topics written by members of the hydra community.
 * why is it called hydra?
 * live coding community and open-source sofware
 #### Hydra techniques
-* Color 
-* Modulation 
+* Color
+* Modulation
 * Masking and layers
 * Feedback
 
