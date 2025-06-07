@@ -211,7 +211,7 @@ noise(2).myModulator(osc(20,.1,1).diff(o0))
 
 ---
 
-## Built in functions you can use
+## Built-in functions
 
 The following functions are pre-defined for every Hydra generated shader, and in the same way that some built-in functions use them, you may too:
 
