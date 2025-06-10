@@ -72,3 +72,9 @@ solid(255)
     )
     .out()
 ```
+
+---
+
+## More
+
+If you want to explore the mouse further, you can extend your usage of the mouse to using clicks. Or you can even use your keyboard as an interactive element! Learn more about this on the [clicks & keys guide](../../guides/event-listeners).
