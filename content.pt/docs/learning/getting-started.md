@@ -7,8 +7,8 @@ weight: 1
 
 Este documento é uma introdução à criação de visuais ao vivo usando o Hydra. Abrange o básico da escrita de código no navegador para gerar e combinar fontes de vídeo em tempo real. Nenhuma experiência com programação ou vídeo é necessária!
 
-Quem quiser apenas começar em 60 segundos, também pode visitar:
-* [Getting started short version (inglês)](https://hackmd.io/@r08UjGF3QMCfvNmdjuY7iQ/rJCpsbNNc)
+<!-- Quem quiser apenas começar em 60 segundos, também pode visitar: -->
+<!-- * [Getting started short version (inglês)](https://hackmd.io/@r08UjGF3QMCfvNmdjuY7iQ/rJCpsbNNc) -->
 
 Este tutorial é pensado para ser usado dentro do [editor web hydra](https://hydra.ojack.xyz/). Também é interativo -- podemos alterar o código em cada bloco para ver como isso afeta os visuais.  
 
