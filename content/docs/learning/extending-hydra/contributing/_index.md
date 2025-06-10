@@ -1,7 +1,7 @@
 ---
 bookCollapseSection: true
-weight: 7
-title: "Developing and contributing"
+weight: 73
+title: "developing & contributing"
 ---
 
 # Developing and Contributing
@@ -17,7 +17,7 @@ Hydra consists of mainly 4 repositories:
 * [hydra-server](https://github.com/hydra-synth/hydra-server)
 * [l10n](https://github.com/hydra-synth/l10n)
 
-hydra, or hydra-editor, is the webpage that comes with the editor. If you want to make changes in, e.g., the behavior of the editor, this is the right repository. We will look into detail in [developing editor](editor).
+hydra, or hydra-editor, is the webpage that comes with the editor. If you want to make changes in, e.g., the behavior of the editor, this is the right repository. See more about [developing the editor](editor).
 
 hydra-synth is the "engine" that processes your hydra code on the editor and produces GLSL (shader) code. We explain in detail in [developing synth](synth).
 

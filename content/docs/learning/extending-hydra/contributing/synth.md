@@ -1,6 +1,6 @@
 ---
-bookCollapseSection: true
-weight: 7
+draft: false
+weight: 731
 title: "developing hydra-synth"
 ---
 

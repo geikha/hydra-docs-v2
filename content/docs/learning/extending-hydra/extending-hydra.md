@@ -1,9 +1,12 @@
 ---
-title: "Using hydra with other javascript libraries"
+title: "other libraries"
+weight: 71
 ---
-# Using hydra with other javascript libraries
+# other libraries
 
-Hydra is written in javascript, and compatible with many other javascript libraries. The hydra web editor executes javascript directly in the browser, so it is possible to load many other libraries and scripts directly in the browser. 
+Hydra is written in JavaScript, and compatible with many other JavaScript libraries. The hydra web editor executes JavaScript directly in the browser, so it is possible to load many other libraries and scripts directly in the browser.
+
+---
 
 ## p5.js
 [p5.js](https://p5js.org/) is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else! p5.js is pre-loaded on the Hydra editor with a wrapper that makes it easier to use inside the website. The wrapper is a class called `P5` (notice the upper-case P). A p5.js sketch can be used as a source within a hydra sketch, and vice versa.
@@ -127,7 +130,7 @@ update = (dt)=> {
 }
 ```
 
-You could also use shape drawing functions such as `rect` directly inside `update`, but you'll need to take into account the coordinate system won't be reset automatically if modified, like when using `draw`. So you'll have to reset it manually by putting actions between `push()` and `pop()`. This would also stop the `frameCount` increment. 
+You could also use shape drawing functions such as `rect` directly inside `update`, but you'll need to take into account the coordinate system won't be reset automatically if modified, like when using `draw`. So you'll have to reset it manually by putting actions between `push()` and `pop()`. This would also stop the `frameCount` increment.
 
 ### Note on using different frame rates
 
@@ -135,8 +138,7 @@ There are many situations where you can save resources by using a very low frame
 
 TO DO: add example of using hydra as texture in p5
 
-## Loading external scripts
-The `await loadScript()` function lets you load other packaged javascript libraries within the hydra editor. Any javascript code can run in the hydra editor.
+---
 
 ## THREE.js
 Here is an example using Three.js from the web editor:
@@ -166,8 +168,10 @@ s0.init({ src: renderer.domElement })
 src(s0).repeat().out()
 ```
 
+---
+
 ## Tone.js
-And here is an example loading the Tone.js library:
+Here is an example loading the Tone.js library:
 ```javascript
 await loadScript("https://unpkg.com/tone")
 
@@ -175,15 +179,50 @@ synth = new Tone.Synth().toDestination();
 synth.triggerAttackRelease("C4", "8n");
 ```
 
+---
+
+## Strudel
+
+Using Strudel to sequence your visuals using patterns is done with the [experimental hydra-strudel extension](https://github.com/atfornes/Hydra-strudel-extension).
+
+```javascript
+await loadScript("https://cdn.jsdelivr.net/gh/atfornes/Hydra-strudel-extension@1/hydra-strudel.js")
+await initHydraStrudel()
+
+// Pattern languages are used to produce sound, but also to express graphic elements:
+pattern = "3 <4 5 6 7>"
+// using [tidal mini notation](https://tidalcycles.org/docs/reference/mini_notation/)
+
+// We could use this pattern to produce triangles, then squares, then triangles, etc:
+shape(P(pattern))
+	.out(o0)
+
+// We can reuse the same pattern to produce sounds as in any Strudel patch.
+n(pattern)
+	.scale("C:major")
+	.play()
+
+// Controlling colors
+src(o0)
+	.color(
+		() => P(pattern)() % 2,
+		() => P(pattern)() % 3,
+		() => P(pattern)() % 5)
+	.out(o1)
+render(o1)
+```
+
+---
+
 ## Custom libraries
-In the Hydra editor, you can load any external scripts, libraries or hydra-synth extensions using the following syntax at the top of your sketch:
+You can load any external scripts or hydra-synth extensions using the following syntax at the top of your sketch:
 
 ```javascript
 await loadScript("https://www.somewebsite.com/url/to/hydra-script.js")
 ```
 
-
-You can also suffer from [CORS policy problems](./external_sources.md#cors-policy) if the script/package you're loading doesn't come from a CDN. If you want to load from a GitHub or GitLab repo, you can use special CDNs like `statically.io`.
+You can also suffer from [CORS policy problems](./external_sources.md#cors-policy) if the script/package you're loading doesn't come from a CDN. If you want to load from a GitHub or GitLab repo, you can use special CDNs like `statically.io`. Learn more about this [here](extensions).
 
 ----
-contributors: geikha, olivia
+
+By Geikha, Olivia Jack

@@ -8,24 +8,31 @@ description: "tutorials and reference for using hydra"
 
 # What is Hydra?
 ![hydra](./images/hydra.png)
+{.center}
 
 Hydra is a live code-able video synth and coding environment that runs directly in the browser. It is free and open-source, and made for beginners and experts alike. You can simply open the [hydra web editor](https://hydra.ojack.xyz) on a laptop or mobile device to get started.
 
 Hydra is written in JavaScript and compiles to WebGL under the hood. The syntax is inspired by analog modular synthesis, in which chaining or patching a set of transformations together generates a visual result.
 
+---
+
 # About
-#### Hydra can be used: 
-- to mix and add effects to camera feeds, screenshares, live streams, and videos
+#### Hydra can be used:
+- to mix and add effects to camera feeds, screen-shares, live streams, and videos
 - to create generative and audio-reactive visuals, and share them online with others
 - in combination with other javascript libraries such as P5.js, Tone.js, THREE.js, or gibber
 - to add interactive video effects to a website
 - to experiment with and learn about video feedback, fractals, and pixel operations
 - to stream video between browsers and live-jam with others online
 
-#### Further resources and next steps
-For more information and instructions, see: [Getting Started](docs/quick-start/), [a list of hydra functions](https://hydra.ojack.xyz/api/), [the community database of projects and tutorials](https://hydra.ojack.xyz/garden/), [a gallery of user-generated sketches](https://twitter.com/hydra_patterns), and [the source code on github](https://github.com/hydra-synth/hydra).
+---
 
-Hydra was created by [olivia jack](https://ojack.xyz) and is supported by a community of contributers. If you enjoy using Hydra, please consider [dontating to support continued development](https://opencollective.com/hydra-synth).
+#### Further resources and next steps
+For more information and instructions, see: [quick start](docs/quick-start/), [a list of hydra functions](docs/reference), [the learning area](docs/learning), [the community database of projects and tutorials](https://hydra.ojack.xyz/garden/), [a gallery of user-created sketches](https://social.toplap.org/@hydra@botsin.space), and [the source code on github](https://github.com/hydra-synth/hydra).
+
+---
+
+Hydra was created by [olivia jack](https://ojack.xyz) and is supported by a community of contributors. If you enjoy using Hydra, please consider [donating to support continued development](https://opencollective.com/hydra-synth).
 
 Extra special thanks the [Clinic for Open Source Arts](https://clinicopensourcearts.org) for generously supporting the creation of this documentation website!
 

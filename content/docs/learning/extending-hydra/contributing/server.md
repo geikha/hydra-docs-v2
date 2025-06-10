@@ -1,9 +1,9 @@
 ---
-bookCollapseSection: true
-weight: 7
-title: "developing backend server"
+draft: false
+weight: 732
+title: "backend server"
 ---
 
-# Developing backend server
+# backend server
 
-(stub)
+_Coming soon..._
