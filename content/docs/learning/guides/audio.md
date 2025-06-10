@@ -1,11 +1,12 @@
 ---
-title: audio
-draft: true
+title: Audio-reactivity explained
+draft: false
+weight: 86
 ---
 
-# Audio Guide
+# Audio-reactivity explained
 ---
-by geikha
+by Geikha
 
 ## Reacting to audio
 
@@ -13,7 +14,7 @@ In order to achieve audio reactivity, Hydra makes use of a JavaScript library ca
 
 ### The audio spectrum
 
-Sound travels through air as a wave, that's fairly common knowledge. This basically means that sound is nothing more than air pressure going up and down through time very fast in weird ways. But we don't experience sound simply as something that goes on and off like a light flickering, many of the sounds we are used to have some sort of frequency or repetition that we interpret as higher or lower pitch. 
+Sound travels through air as a wave, that's fairly common knowledge. This basically means that sound is nothing more than air pressure going up and down through time very fast in weird ways. But we don't experience sound simply as something that goes on and off like a light flickering, many of the sounds we are used to have some sort of frequency or repetition that we interpret as higher or lower pitch.
 When we listen to a song we can easily differentiate the bass guitar from the singer even if both are playing at the same time. If there are two vocals being sung at the same time, even if by the same person, we can differentiate them because of how high or low they are (also because of timbre, but that doesn't matter at all right now).
 When we talk about the audio spectrum, we are talking about the many frequencies a sound can cover and we humans can hear.
 What a fast fourier transform does is basically hear some ongoing sound and interpret how present the sound is on different parts of this spectrum. For example, if we separate the audio spectrum in 3 equal parts and play a drum-kit, the bass drum will have more presence on the lower side of the spectrum, while a hi-hat will surely have most of its presence on the higher third part of the spectrum.
@@ -22,7 +23,7 @@ What a fast fourier transform does is basically hear some ongoing sound and inte
 
 We can see what Hydra hears by calling the function `a.show()`. This will show a small graphic on the lower right corner of the screen. If we want to hide it we can call `a.hide()`
 
-### a.setBins() & a.fft 
+### a.setBins() & a.fft
 
 We can decide into how many parts we want to separate the audio spectrum using the function `a.setBins()`. As you might've already guessed, a bin is just a part of the audio spectrum. Try now to use very high values since more bins means more processing and you can go overkill easily. But also, you'll see there usually isn't much need to separate the spectrum into that many parts.
 To read the current value of a bin we use an Array (a list of variables per se) called `a.fft`.
@@ -67,10 +68,10 @@ Hydra also has a simple beat detection algorithm. You can change this function t
 
 ### Reacting to music
 
-As we've seen, Hydra takes your microphone as an input, not your desktop audio. Those interested in using a music player or a DAW's output as an audio input will have to delve into virtual audio routing. Users with physical sound interfaces with multiple inputs and outputs might prefer physically routing an output to an input and set that input as the default microphone on Chrome.
+As we've seen, Hydra takes your microphone as an input, not your desktop audio. Those interested in using a music player or a DAW's output as an audio input will have to delve into virtual audio routing. Users with physical sound interfaces with multiple inputs and outputs might prefer physically routing an output to an input and set that input as the default microphone on Chrome. If you use a DAW, you could also use envelope followers inside it and send MIDI CC to Hydra with the `hydra-midi` extension.
 
----
+<!-- --- -->
 
-## Virtually routing audio to Hydra
+<!-- ## Virtually routing audio to Hydra -->
 
-TODO
+<!-- TODO -->

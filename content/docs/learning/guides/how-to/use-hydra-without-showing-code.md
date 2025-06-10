@@ -1,11 +1,10 @@
 ---
-title: Use hydra without showing the code
+title: Use Hydra without showing the code
 ---
 
 # How can I livecode Hydra without showing the code over the visuals?
-
-
-You can either:
+---
+by Flor de Fuego, Geikha
 
 ## Use Flok:
 
@@ -18,7 +17,9 @@ Now you can code on one tab and commands will also run on the other tab!
 ## Use your browser's dev tools console:
 
 Here's a tutorial by Flor de Fuego about how to do this:
-[EN]
+
+### English
 {{< youtube b9VS7Q86T-Y >}}
-[ES] 
+
+### Spanish
 {{< youtube T12cym5A28U >}}

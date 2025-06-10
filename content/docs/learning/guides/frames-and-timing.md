@@ -1,5 +1,11 @@
-# frames and timing
-by geikha
+---
+title: Updating frames & precise timing
+weight: 83
+---
+
+# Updating frames & precise timing
+---
+by Geikha
 
 ## Using the update function
 

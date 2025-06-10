@@ -1,10 +1,15 @@
 ---
-title: javascript for hydra users
+title: JavaScript for Hydra users
+weight: 81
 ---
 
-# JavaScript Guide
+# JavaScript for Hydra users
+---
+by Geikha
 
 This guide is made for users who are new to JavaScript or coding in general and would like to dive into these topics. You don't need to fully understand what's here to use Hydra. If you're just starting with Hydra and you have no coding experience, we recommend you experiment with Hydra a bit before reading this.
+
+---
 
 ## Comments
 
@@ -34,7 +39,7 @@ noise(2,.5)
 
 You will surely find useful sometimes to "comment in and out" some lines of code to see how it affects the visuals, or simply to understand what each line of code does. By adding a `//` at the start of a line you can comment it out and see how some sketch would look like without a given transform without having to delete the original line.
 
-```javascript 
+```javascript
 noise(2,.5)
 	.diff(src(o0).rotate(Math.PI/4)) // rotating by 45°
  	//.thresh(.5)
@@ -139,7 +144,7 @@ You can learn more about dynamic inputs [here](/guides/advanced#dynamic-inputs).
 
 ## Functions
 
-A function is similar to a variable in the sense that you're going to give it its own name and call it multiple times later. The difference being that functions do not store values, they store pieces of code that -usually- return some value. 
+A function is similar to a variable in the sense that you're going to give it its own name and call it multiple times later. The difference being that functions do not store values, they store pieces of code that -usually- return some value.
 You can see them as little boxes where you put something in and they spit something out.
 Functions will help you not to repeat your code multiple times, sometimes you'll see you can write a function that spits out what you need instead of rewriting it many times.
 
@@ -178,7 +183,7 @@ sum = (a,b) => a+b
 
 ```hydra
 // works properly on the editor
-circle = () => shape(64,.4,.1).scale(1,innerHeight/innerWidth)
+circle = () => shape(64,.4,.1).scale(1,height/width)
 circle()
 	.out()
 ```
@@ -190,14 +195,15 @@ Let's see how we could make the circle function more useful by adding parameters
 
 ```hydra
 // works properly on the editor
-circle = (size,blur=.1)=> shape(64,size,blur)
-                        .scale(1,()=>innerHeight/innerWidth)
+circle = (size,blur=.1)=>
+	shape(64,size,blur)
+		.scale(1,()=>height/width)
 circle(.4)
 	.diff(circle(.2,.6))
 	.out()
 ```
 
-Now, each time we call the circle function we can specify a size and blur. We can also omit the blur and the function will use the default value specified next to it. 
+Now, each time we call the circle function we can specify a size and blur. We can also omit the blur and the function will use the default value specified next to it.
 We also changed the scaling to an arrow function, which you may find surprising if you haven't seen it before. When you use a function as an argument, Hydra will evaluate that function every time it renders a frame and use the return of that function in the rendering of that frame. In other words, functions can be used as [dynamic inputs](/guides/advanced#functions).
 
 ### Using declared functions as inputs
@@ -288,7 +294,7 @@ And now let's add a method:
 
 ```hydra
 coords = {
-    x: 0.25, 
+    x: 0.25,
     y: 0.25,
     inverted: function(){
         newCoords = {x: -this.x, y: -this.y}
@@ -319,14 +325,14 @@ The window object has lots of information about the environment that our visuals
 
 For example, we can calculate the ratio between height and width to have perfect squares on our sketches:
 
-```javascript 
+```javascript
 // this example will only work on the editor or atom-hydra
 screenRatio = innerHeight/innerWidth
 shape(4,.4).scale(1,screenRatio)
 	.out()
 ```
 
-There's also the less used `screenX` and `screenY` which will tell you the position of the window relative to the full screen. 
+There's also the less used `screenX` and `screenY` which will tell you the position of the window relative to the full screen.
 Try to move your browser's window with the following example:
 
 ```hydra
@@ -339,7 +345,7 @@ osc()
 
 ## The Math Object
 
-You have surely seen many examples in Hydra and in these tutorials that make use of mathematical functions such as the sine wave. You may have also noticed that each time one of them is used, they're written as `Math.somefunction()`. The reason for this is that all these very useful functions are taken from a special object called `Math` that is present in practically every JavaScript implementation. 
+You have surely seen many examples in Hydra and in these tutorials that make use of mathematical functions such as the sine wave. You may have also noticed that each time one of them is used, they're written as `Math.somefunction()`. The reason for this is that all these very useful functions are taken from a special object called `Math` that is present in practically every JavaScript implementation.
 You can see the full list of functions and variables in the Math object [clicking here](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math).
 
 ### Math.PI

@@ -1,14 +1,16 @@
 ---
-title: "Hydra Book: Textures"
+title: "Textures [Hydra Book]"
 draft: false
 author: "Naoto Hieda"
-weight: 4
+weight: 84
 # type: posts
 ---
 # Textures
-by Naoto Hieda 
+by Naoto Hieda
 
-In this chapter, we discuss textures or patterns, separately from colors or movements. Most of the snippets have low saturation in order to separate textures from other effects.
+In this chapter of the Hydra Book, we discuss textures or patterns, separately from colors or movements. Most of the snippets have low saturation in order to separate textures from other effects.
+
+---
 
 Oscillator
 --------
