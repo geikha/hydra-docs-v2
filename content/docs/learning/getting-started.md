@@ -3,7 +3,7 @@ title: "getting started"
 date: 2023-04-04T15:10:36+02:00
 # draft: true
 author: "Flor and Olivia"
-weight: 2
+weight: 3
 ---
 
 # Getting started with _hydra_

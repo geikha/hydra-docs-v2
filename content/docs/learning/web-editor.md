@@ -3,11 +3,13 @@ title: "web editor"
 date: 2023-04-04T15:10:36+02:00
 draft: false
 author: "Flor and Olivia"
-weight: 2
+weight: 3
 ---
 
-# Web editor
+# web editor
 Basic usage of the browser editor at [hydra.ojack.xyz](https://hydra.ojack.xyz)
+
+---
 
 ## Keyboard shortcuts
 * CTRL-Enter: run a line of code
@@ -17,6 +19,8 @@ Basic usage of the browser editor at [hydra.ojack.xyz](https://hydra.ojack.xyz)
 * CTRL-Shift-F: format code using [Prettier](https://prettier.io/)
 * CTRL-Shift-S: Save screenshot and download as local file.
 * CTRL-Shift-G: Shares to Mastodon (not available right now, but you can still store sketches).
+
+---
 
 ## Toolbar
 At the right up corner you will find a toolbar with these buttons:
@@ -30,6 +34,7 @@ At the right up corner you will find a toolbar with these buttons:
 5. **make random change** **dices** modify values automatically. Try it with some of the sketch examples.
 6. **show info window** show overlay window with help text and links
 
+---
 
 ## Save your sketches
 
@@ -62,6 +67,8 @@ https://hydra.ojack.xyz/?code=b3NjKDEwJTJDJTIwMC4xJTJDJTIwMS4yKS5tb2R1bGF0ZVNjYW
 
 Pressing `Ctrl+Shift+H` will show the code again.
 
+---
+
 ## What is an error?
 Sometimes, you will try to run a line of code, and nothing will happen. If you have an error you’ll notice text in red at the left-bottom on your screen. Something like ‘Unexpected token ‘.’ (in red) will appear. This doesn’t affect your code, but you won’t be able to continue coding until you fix the error. Usually it is a typing error or something related to the syntax.
 
@@ -70,3 +77,7 @@ Sometimes, you will try to run a line of code, and nothing will happen. If you h
 ```javascript
 // Hello I’m a comment line. I’m a text that won’t change your code. You can write notations, your name or even a poem here.
 ```
+
+---
+
+By Flor de Fuego, Olivia Jack

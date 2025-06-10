@@ -1,9 +1,10 @@
 ---
-title: Record hydra's output
+title: Record Hydra's output
 ---
 
-# Recording
+# Record Hydra's output
 ---
+by Geikha
 
 ## Saving images from Hydra
 
@@ -51,6 +52,3 @@ If you don't want to record your browser's UI, do the following:
 #### Note on window size
 
 If you want to set your browser's window to a specific size, there are various add-ons on different browsers that allow you to do that. Remember you want to set the size of the view pane and not the whole window.
-
----
-by geikha
