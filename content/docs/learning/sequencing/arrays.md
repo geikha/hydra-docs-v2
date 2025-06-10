@@ -1,6 +1,11 @@
-### Arrays
+---
+title: "arrays"
+date: 2025-06-06
+draft: false
+weight: 50
+---
 
-#### Sequence your inputs
+# arrays
 
 When you send an Array as an input, Hydra will automatically switch and jump from each element from the Array to the next one. When there are no more elements, it wraps all the way back to the beginning. Let's see it in action:
 
@@ -20,7 +25,7 @@ gradient()
 	.out()
 ```
 
-#### Changing the global bpm for Arrays
+## **bpm**
 
 To change how rapidly Hydra switches from element to element of all Arrays, you can change the `bpm` variable (meaning beats per minute) to any value you desire:
 
@@ -36,9 +41,12 @@ The default value for `bpm` is 30.
 
 When livecoding visuals at the same time that music is playing, it can be useful to have a tapping metronome opened to keep track of the BPM being played and set this variable as such.
 
-#### Changing the speed of a specific Array
+## **fast**
 
 Hydra adds a couple of methods to all Arrays to be used inside Hydra. `.fast` will control the speed at which Hydra takes elements from the Array. It receives a Number as argument, by which the global speed will be multiplied. So calling `.fast(1)` on an Array is the same as nothing. Higher values will generate faster switching, while lower than 1 values will be slower.
+
+`[].fast( speed = 1 )`
+{.center}
 
 ```hydra
 bpm = 45
@@ -47,9 +55,12 @@ osc([20,30,50,60],.1,[0,1.5].fast(1.5)) // 50% faster
 	.out()
 ```
 
-#### Offsetting the timing of an Array
+## **offset**
 
 Another one of the methods Hydra adds to Arrays, allows you to offset the timing at which Hydra will switch from one element of the Array to the next one. The method `.offset` takes a Number from 0 to 1.
+
+`[].offset( offset = 0 )`
+{.center}
 
 ```hydra
 bpm = 45
@@ -57,10 +68,13 @@ osc([20,30,50,60],.1,[0,1.5].offset(.5)) // try changing the offset
 	.out()
 ```
 
-#### Fitting the values of an Array within a range
+## **fit**
 
 Sometimes you have an Array whose values aren't very useful when used as input for a some Hydra function.
 Hydra adds a `.fit` method to Arrays which takes a minimum and a maximum to which fit the values into:
+
+`[].fit( min, max )`
+{.center}
 
 ```hydra
 bpm = 120
@@ -70,9 +84,12 @@ osc(50,.1,arr().fit(0,Math.PI))
 	.out()
 ```
 
-#### Interpolating between values
+## **smooth**
 
 You can also interpolate between values instead of jumping from one to the other. That is, smoothly transition between values. For this you can use the `.smooth` method. It may take a Number argument (defaulted to 1) which controls the smoothness.
+
+`[].smooth()`
+{.center}
 
 ```hydra
 bpm = 50
@@ -84,9 +101,12 @@ osc(50,.1,arr.smooth())
 
 Try smoothing some of the above examples and see what happens!
 
-##### Easing functions
+## **ease**
 
 The default interpolation used by Hydra on an Array that called `.smooth` is linear interpolation. You can select a different easing function as follows:
+
+`[].ease( easingFunc = "linear" )`
+{.center}
 
 ```hydra
 bpm = 50
@@ -95,6 +115,8 @@ osc(50,.1,arr.ease('easeInQuad'))
 	.rotate(arr.fit(-Math.PI/4,Math.PI/4).ease('easeOutQuad'))
 	.out() // try other easing functions !
 ```
+
+### Easing functions
 
 The following are the available easing functions:
 
@@ -113,7 +135,9 @@ The following are the available easing functions:
 * easeInOutQuint
 * sin: sinusoidal shape
 
-#### Note on storing Arrays on variables / functions
+## Notes
+
+### Arrays as variables or functions
 
 Storing an Array in a variable can lead to some trouble as soon as you apply some of the just-mentioned functions to it. Since Arrays are Objects, each time you call your variable, you'll be calling the same Object. If you apply some speed via `.fast` or smoothness via `.smooth` somewhere in your patch, and then use the same variable, all the following uses of the Array will also have these effects applied to them. For example
 
@@ -131,7 +155,7 @@ osc(30,.1,arr2().smooth())
 render()
 ```
 
-#### Note on Arrays and textures
+### Arrays and textures
 
 Note that the following will not work:
 
@@ -172,9 +196,9 @@ select(textures,()=>Math.floor(mouse.x/innerWidth*4))
 ```
 
 ```javascript
-// re-compiling method, heavy CPU load. 
-// it reserves an output for the switching. 
-// can't blend between elements. 
+// re-compiling method, heavy CPU load.
+// it reserves an output for the switching.
+// can't blend between elements.
 // each time an element switches the shader must be recompiled
 
 osc(20)
@@ -193,5 +217,9 @@ update = (dt)=> {
     }
 }
 ```
----
-by geikha
+
+### A small bug
+
+{{< hint danger >}}
+Currently, sketches using arrays with `smooth` have a small bug for the first few seconds (or more, depending on your `bpm`). Hydra tries to interpolate between the first element of the array with the one before, the problem being that there's no element before the first one, so it returns a `NaN`. This shouldn't be much of a problem, but you can try to circumvent this setting the time yourself: `hydraSynth.synth.time = 60/bpm*128`
+{{< /hint >}}
