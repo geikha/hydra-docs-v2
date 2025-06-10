@@ -2,6 +2,7 @@
 title: Geometry
 date: 2023-11-16
 weight: 2
+draft: true
 ---
 # Geometry
 
@@ -88,4 +89,3 @@ scrollY( scrollY = 0.5, speed )
 // default
 osc(10,0,1).scrollY(0.5,0).out(o0)
 ```
-
